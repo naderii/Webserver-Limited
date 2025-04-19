@@ -1,3 +1,5 @@
+<div dir="rtl">
+
 ## **🔐 1. محدودسازی نرخ درخواست (Rate Limiting)**
 ```bash
 <IfModule mod_ratelimit.c>
@@ -42,6 +44,7 @@
     RewriteRule ^ - [F]
 </IfModule>
 ```
+✅ **کاربرد**: جلوگیری از دسترسی ابزارهای مخرب و اتوماسیون
 
 ---
 
@@ -51,6 +54,7 @@
     Require all denied
 </FilesMatch>
 ```
+✅ **کاربرد**: جلوگیری از دسترسی عمومی به فایل‌های پیکربندی
 
 ---
 
@@ -61,6 +65,7 @@ Header always set X-Content-Type-Options "nosniff"
 Header always set X-XSS-Protection "1; mode=block"
 Header always set Content-Security-Policy "default-src 'self'"
 ```
+✅ **کاربرد**: محافظت در برابر حملات XSS، Clickjacking و MIME Sniffing
 
 ---
 
@@ -72,6 +77,7 @@ MaxKeepAliveRequests 100
 KeepAliveTimeout 5
 LimitRequestBody 102400
 ```
+✅ **کاربرد**: کاهش تاثیر حملات با اتصالات طولانی مدت
 
 ---
 
@@ -81,6 +87,7 @@ LimitRequestBody 102400
     Require all denied
 </LimitExcept>
 ```
+✅ **کاربرد**: جلوگیری از سوء‌استفاده با متدهای غیرمجاز مثل PUT و DELETE
 
 ---
 
@@ -90,3 +97,5 @@ LimitRequestBody 102400
 3. از ماژول‌های امنیتی مثل mod_security استفاده کنید
 
 > **⚠️ هشدار**: تنظیمات را با توجه به سخت‌افزار سرور و ترافیک واقعی اعمال کنید
+
+</div>
